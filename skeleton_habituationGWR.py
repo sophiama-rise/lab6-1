@@ -58,8 +58,8 @@ for t in range(nTs):
     if x[t]>0: # some stimulation occurred
         v *= dec # decrement weight
         
-   # if t>3 and sum(x[t-4:t]) and v<stv and forgetflag:
-    #    v += (stv-v)*.05 # lets forget this association we just
+    if t>3 and sum(x[t-4:t]) and v<stv and forgetflag:
+        v += (stv-v)*.05 # lets forget this association we just
                          # learned if it doesn't happen for a while
 
 #     then indent 4 spaces and write the equation that
